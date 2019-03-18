@@ -1,19 +1,37 @@
 package com.java.training.entity;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class NoteBook {
-    public void setNotes(Note[] notes) {this.notes = notes;}
+  //  public void setNotes(Note[] notes) {this.notes = notes;}
 
-    Note[] notes = new Note[5];
-    for (int i = 0; i < 5; i++)
-        notes.[i] = i;
 
-    public Note[] getNotes() {return notes;}
+    public Note[] notes(String[] args) {
+        Note[] notes = new Note[5];
+        for (int i=0; i<notes.length; i++){
+            Note note = new Note();
+            note.text ="Just text";
+            note.date = LocalDate.now();
+            notes[i] = note;
+        }
 
-   int countNotes (){
+        for (int k=0; k<notes.length; k++){
+            System.out.println(notes[k].text + " " + notes[k].date);
+        }
+
+
+        return notes;
+
+    }
+
+
+
+   int countNotes(){
        return notes.length;
    }
+
+
 
    @Override
    public boolean equals(Object obj) {

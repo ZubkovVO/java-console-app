@@ -3,14 +3,11 @@ package com.java.training.entity;
 import java.time.LocalDate;
 
 public class Note {
-    public String getNoteText() {return noteText;}
-    public LocalDate getNoteDate() {return noteDate;}
+    public String getText() {return text;}
+    public LocalDate getDate() {return date;}
 
-    String noteText;
-    LocalDate noteDate = LocalDate.now();
-    void displayInfo(){
-        System.out.println(noteText +" "+ noteDate);
-    }
+    String text;
+    LocalDate date;
 
     @Override
     public boolean equals(Object obj){
@@ -29,22 +26,22 @@ public class Note {
         }
         //Транзитивность
         Note note = (Note) obj;
-        return (noteText == note.noteText || (noteText != null && noteText.equals(note.getNoteText()))) &&
-               (noteDate == note.noteDate || (noteDate != null && noteDate.equals(note.getNoteDate())));
+        return (text == note.text || (text != null && text.equals(note.getText()))) &&
+               (date == note.date || (date != null && date.equals(note.getDate())));
     }
 
     @Override
     public int hashCode(){
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((noteText == null) ? 0 : noteText.hashCode());
-        result = prime * result + ((noteDate == null) ? 0 : noteDate.hashCode());
+        result = prime * result + ((text == null) ? 0 : text.hashCode());
+        result = prime * result + ((date == null) ? 0 : date.hashCode());
         return result;
     }
 
     @Override
     public String toString() {
-        return "Текст заметки: " + noteText +"\n"+ "Дата заметки: " + noteDate;
+        return "Текст заметки: " + text +"\n"+ "Дата заметки: " + date;
     }
 
 }

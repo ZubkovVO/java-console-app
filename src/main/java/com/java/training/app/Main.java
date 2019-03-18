@@ -8,11 +8,11 @@ public class Main {
     {
        // System.out.println( "Hello World!" );
 
-        Note note = new Note();
+        /*Note note = new Note();*/
        // note.displayInfo();
-        System.out.println(note.toString());
+      /*  System.out.println(note.toString());
         System.out.println(note.hashCode());
-        System.out.println(note.equals(note));
+        System.out.println(note.equals(note));*/
 
        /* note.noteText="Some text";
         note.localDate.of(2018, 02, 20);
