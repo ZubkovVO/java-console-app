@@ -3,7 +3,11 @@ package com.java.training.entity;
 import java.util.Arrays;
 
 public class NoteBook {
-   Note[] notes = new Note [3];
+    public void setNotes(Note[] notes) {this.notes = notes;}
+
+    Note[] notes = new Note[5];
+    for (int i = 0; i < 5; i++)
+        notes.[i] = i;
 
     public Note[] getNotes() {return notes;}
 
