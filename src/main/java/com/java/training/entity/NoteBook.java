@@ -6,9 +6,14 @@ import java.util.Arrays;
 public class NoteBook {
   //  public void setNotes(Note[] notes) {this.notes = notes;}
 
+    public Note[] getNotes() {
+        return notes;
+    }
+
+    public Note[] notes;
 
     public Note[] notes(String[] args) {
-        Note[] notes = new Note[5];
+        notes = new Note[5];
         for (int i=0; i<notes.length; i++){
             Note note = new Note();
             note.text ="Just text";
@@ -19,15 +24,11 @@ public class NoteBook {
         for (int k=0; k<notes.length; k++){
             System.out.println(notes[k].text + " " + notes[k].date);
         }
-
-
         return notes;
-
     }
 
-
-
-   int countNotes(){
+   public int countNotes(){
+       System.out.println(notes.length);
        return notes.length;
    }
 

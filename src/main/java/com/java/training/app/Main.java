@@ -1,5 +1,6 @@
 package com.java.training.app;
 
+import com.java.training.entity.ArrayOf;
 import com.java.training.entity.Note;
 import com.java.training.entity.NoteBook;
 
@@ -21,8 +22,14 @@ public class Main {
         NoteBook noteBook = new NoteBook();
         System.out.println(noteBook.countNotes());*/
 
-       NoteBook noteBook = new NoteBook();
+     /*  NoteBook noteBook = new NoteBook();
        System.out.println(noteBook.toString());
+
+       noteBook.countNotes();*/
+        ArrayOf arr = new ArrayOf();
+        System.out.println(arr);
+
+
 
     }
 }
