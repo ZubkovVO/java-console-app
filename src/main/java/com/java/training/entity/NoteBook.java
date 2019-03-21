@@ -12,27 +12,21 @@ public class NoteBook {
 
     public Note[] notes;
 
-    public Note[] notes(String[] args) {
+    public Note[] notes() {
         notes = new Note[5];
         for (int i=0; i<notes.length; i++){
             Note note = new Note();
-            note.text ="Just text";
-            note.date = LocalDate.now();
+            note.setText("Just text");
+            note.setDate(LocalDate.now());
             notes[i] = note;
-        }
-
-        for (int k=0; k<notes.length; k++){
-            System.out.println(notes[k].text + " " + notes[k].date);
         }
         return notes;
     }
 
    public int countNotes(){
-       System.out.println(notes.length);
+       notes();
        return notes.length;
    }
-
-
 
    @Override
    public boolean equals(Object obj) {

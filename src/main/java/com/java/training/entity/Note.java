@@ -6,6 +6,9 @@ public class Note {
     public String getText() {return text;}
     public LocalDate getDate() {return date;}
 
+    public void setText(String text) {this.text = text;}
+    public void setDate(LocalDate date) {this.date = date;}
+
     String text;
     LocalDate date;
 

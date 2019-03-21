@@ -6,7 +6,7 @@ public class ArrayOf {
 
     private Student[] studentArray;
 
-    public Student[] array(String[] args) {
+    public Student[] array() {
         studentArray = new Student[7];
         for (int i=0; i<studentArray.length; i++){
             studentArray[i]=new Student();
@@ -20,7 +20,8 @@ public class ArrayOf {
         return studentArray;
     }
 
-    public int count(Student[] studentArray){
+    public int count(){
+        array();
         return studentArray.length;
     }
 

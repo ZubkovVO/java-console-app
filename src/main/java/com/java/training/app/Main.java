@@ -22,12 +22,14 @@ public class Main {
         NoteBook noteBook = new NoteBook();
         System.out.println(noteBook.countNotes());*/
 
-     /*  NoteBook noteBook = new NoteBook();
+     /*  NoteBook noteBook = new .NoteBook();
        System.out.println(noteBook.toString());
 
        noteBook.countNotes();*/
-        ArrayOf arr = new ArrayOf();
-        System.out.println(arr);
+
+
+        NoteBook noteBook = new NoteBook();
+        System.out.println(noteBook.countNotes());
 
 
 
