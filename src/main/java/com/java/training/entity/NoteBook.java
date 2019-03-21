@@ -12,7 +12,7 @@ public class NoteBook {
 
     public Note[] notes;
 
-    public Note[] notes() {
+    public NoteBook() {
         notes = new Note[5];
         for (int i=0; i<notes.length; i++){
             Note note = new Note();
@@ -20,11 +20,9 @@ public class NoteBook {
             note.setDate(LocalDate.now());
             notes[i] = note;
         }
-        return notes;
     }
 
    public int countNotes(){
-       notes();
        return notes.length;
    }
 
