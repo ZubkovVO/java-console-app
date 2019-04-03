@@ -19,8 +19,14 @@ public class NoteBookConsoleView {
         System.out.println(noteBook);
     }
 
-    public void print(NoteBook[] noteBooks){
+    /*public void print(NoteBook[] noteBooks){
         System.out.println(noteBooks);
+    }*/
+
+    public static void print(NoteBook[] noteBooks){
+        for (NoteBook noteBook:noteBooks) {
+            System.out.println(noteBook.toString());
+        }
     }
 
 }

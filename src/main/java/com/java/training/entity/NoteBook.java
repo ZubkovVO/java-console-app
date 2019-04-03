@@ -1,6 +1,5 @@
 package com.java.training.entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
@@ -11,7 +10,7 @@ public class NoteBook {
     public NoteBook() {
         notes = new Note[5];
         for (int i = 0; i < notes.length; i++) {
-            Note note = new Note("Just text", LocalDateTime.now());
+            Note note = new Note("Just text"+i, LocalDateTime.now());
             notes[i] = note;
         }
     }

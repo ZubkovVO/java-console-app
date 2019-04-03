@@ -3,34 +3,30 @@ package com.java.training.utils;
 import com.java.training.entity.Note;
 import com.java.training.entity.NoteBook;
 
-import java.time.LocalDate;
-import java.util.Arrays;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 public class NoteBookProvider {
 
-    {
-        noteBooks = new NoteBook[5];
-    }
-
-    private NoteBook[] noteBooks;
-    private static NoteBookProvider instance;
-
-    /*пришлось сделать public т.к class Main не видел провайдер при создании экземпляра
-    не смотря на то, что я вызывал метод getInstance*/
-    public NoteBookProvider() {
-    }
-
     public static NoteBookProvider getInstance() {
         if (instance == null) {
             instance = new NoteBookProvider();
-            for (int i = 0; i < instance.noteBooks.length; i++) {
-                NoteBook noteBook = new NoteBook();
-                instance.noteBooks[i] = noteBook;
-                System.out.println(instance.noteBooks);
-            }
         }
         return instance;
+    }
+
+    private NoteBook[] noteBooks;
+
+    //Array initialize
+    {
+        noteBooks = new NoteBook[5];
+        for (int i = 0; i < noteBooks.length; i++)
+            noteBooks[i] = new NoteBook();
+    }
+
+    private static NoteBookProvider instance;
+
+    public NoteBookProvider() {
     }
 
     public NoteBook getRandomNoteBook() {
