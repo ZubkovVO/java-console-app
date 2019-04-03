@@ -1,5 +1,7 @@
 package com.java.training.entity;
 
+import com.java.training.utils.RandomNoteValues;
+
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
@@ -10,7 +12,7 @@ public class NoteBook {
     public NoteBook() {
         notes = new Note[5];
         for (int i = 0; i < notes.length; i++) {
-            Note note = new Note("Just text"+i, LocalDateTime.now());
+            Note note = new Note(new RandomNoteValues().getRandomText(), new RandomNoteValues().getRandomTime());
             notes[i] = note;
         }
     }
