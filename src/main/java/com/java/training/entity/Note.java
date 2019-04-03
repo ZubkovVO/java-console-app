@@ -1,50 +1,44 @@
 package com.java.training.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Note {
+    private String text;
+    private LocalDateTime date;
+
+
+    public Note(String text, LocalDateTime date) {
+        this.text = text;
+        this.date = date;
+    }
+
     public String getText() {return text;}
-    public LocalDate getDate() {return date;}
-
+    public LocalDateTime getDate() {return date;}
     public void setText(String text) {this.text = text;}
-    public void setDate(LocalDate date) {this.date = date;}
+    public void setDate(LocalDateTime date) {this.date = date;}
 
-    String text;
-    LocalDate date;
 
     @Override
-    public boolean equals(Object obj){
-        //Проверяем рефлексивность: объект должен быть равен себе самому
-        if (obj == this){
-           return true;
-        }
-        /*Проверьте объект на null, а также проверьте, чтобы объекты были
-        одного типа. Не делайте проверку с помощью instanceof так как такая
-        проверка будет возвращать true для подклассов и будет работать правильно
-        только в случае если ваш класс объявлен как immutable. Вместо этого можно
-        использовать getClass();
-         */
-        if (obj == null || obj.getClass() != this.getClass()){
-            return false;
-        }
-        //Транзитивность
-        Note note = (Note) obj;
-        return (text == note.text || (text != null && text.equals(note.getText()))) &&
-               (date == note.date || (date != null && date.equals(note.getDate())));
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Note note = (Note) o;
+        return Objects.equals(text, note.text) &&
+                Objects.equals(date, note.date);
     }
 
     @Override
-    public int hashCode(){
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((text == null) ? 0 : text.hashCode());
-        result = prime * result + ((date == null) ? 0 : date.hashCode());
-        return result;
+    public int hashCode() {
+        return Objects.hash(text, date);
     }
 
     @Override
     public String toString() {
-        return "Текст заметки: " + text +"\n"+ "Дата заметки: " + date;
+        return "Note{" +
+                "text='" + text + '\'' +
+                ", date=" + date +
+                '}';
     }
-
 }

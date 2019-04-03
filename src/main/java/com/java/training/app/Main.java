@@ -1,37 +1,19 @@
 package com.java.training.app;
 
-import com.java.training.entity.ArrayOf;
-import com.java.training.entity.Note;
 import com.java.training.entity.NoteBook;
+import com.java.training.utils.NoteBookConsoleView;
+import com.java.training.utils.NoteBookProvider;
 
 public class Main {
+
+    private static NoteBookProvider provider = new NoteBookProvider().getInstance();
+
     public static void main( String[] args )
     {
-       // System.out.println( "Hello World!" );
-
-        /*Note note = new Note();*/
-       // note.displayInfo();
-      /*  System.out.println(note.toString());
-        System.out.println(note.hashCode());
-        System.out.println(note.equals(note));*/
-
-       /* note.noteText="Some text";
-        note.localDate.of(2018, 02, 20);
-        note.displayInfo();
-
-        NoteBook noteBook = new NoteBook();
-        System.out.println(noteBook.countNotes());*/
-
-     /*  NoteBook noteBook = new .NoteBook();
-       System.out.println(noteBook.toString());
-
-       noteBook.countNotes();*/
-
-
-        NoteBook noteBook = new NoteBook();
-        System.out.println(noteBook.countNotes());
-
-
-
+        NoteBookConsoleView view = new NoteBookConsoleView();
+        view.print(provider.getRandomNoteBook());
+        view.print(provider.getRandomNote());
+        view.print(provider.getAllNotebooks());
+        view.print(provider.getRandomNote());
     }
 }

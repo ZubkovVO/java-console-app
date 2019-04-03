@@ -1,55 +1,52 @@
 package com.java.training.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class NoteBook {
-  //  public void setNotes(Note[] notes) {this.notes = notes;}
+
+    private Note[] notes;
+
+    public NoteBook() {
+        notes = new Note[5];
+        for (int i = 0; i < notes.length; i++) {
+            Note note = new Note("Just text", LocalDateTime.now());
+            notes[i] = note;
+        }
+    }
 
     public Note[] getNotes() {
         return notes;
     }
 
-    public Note[] notes;
-
-    public NoteBook() {
-        notes = new Note[5];
-        for (int i=0; i<notes.length; i++){
-            Note note = new Note();
-            note.setText("Just text");
-            note.setDate(LocalDate.now());
-            notes[i] = note;
-        }
+    public void setNotes(Note[] notes) {
+        this.notes = notes;
     }
 
-   public int countNotes(){
-       return notes.length;
-   }
-
-   @Override
-   public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-
-        if (obj == null || obj.getClass() != this.getClass()) {
-            return false;
-        }
-
-        NoteBook noteBook = (NoteBook) obj;
-        return (notes == noteBook.notes || (notes != null && notes.equals(noteBook.getNotes())));
+    public int countNotes() {
+        return notes.length;
     }
 
-   @Override
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NoteBook noteBook = (NoteBook) o;
+        return Arrays.equals(notes, noteBook.notes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(notes);
+    }
+
+    @Override
     public String toString() {
-        return Arrays.toString(notes);
+        return "NoteBook{" +
+                "notes=" + Arrays.toString(notes) +
+                '}';
     }
-
-   @Override
-    public int hashCode(){
-       return Arrays.hashCode(notes);
-   }
-
 }
 
 
