@@ -7,17 +7,11 @@ public class Main {
 
     private static NoteBookProvider provider = new NoteBookProvider().getInstance();
 
-    public static void main( String[] args )
-    {
-        NoteBookConsoleView view = new NoteBookConsoleView();
-        System.out.println("--One note--");
-        view.print(provider.getRandomNote());
-        System.out.println("--Random notes--");
-        view.print(provider.getRandomNote(),provider.getRandomNote());
-        System.out.println("--Random notebook--");
-        view.print(provider.getRandomNoteBook());
-        System.out.println("--All notebooks with notes--");
-        view.print(provider.getAllNotebooks());
+    public static void main(String[] args) {
+        NoteBookConsoleView.print(provider.getRandomNote());
+        NoteBookConsoleView.print(provider.getRandomNote(), provider.getRandomNote());
+        NoteBookConsoleView.print(provider.getRandomNoteBook());
+        NoteBookConsoleView.print(provider.getAllNotebooks());
 
     }
 }

@@ -3,7 +3,6 @@ package com.java.training.utils;
 import com.java.training.entity.Note;
 import com.java.training.entity.NoteBook;
 
-import java.time.LocalDateTime;
 import java.util.Random;
 
 public class NoteBookProvider {
@@ -38,7 +37,7 @@ public class NoteBookProvider {
         return notes[new Random().nextInt(notes.length)];
     }
 
-    public NoteBook[] getAllNotebooks(){
+    public NoteBook[] getAllNotebooks() {
         return noteBooks;
     }
 }

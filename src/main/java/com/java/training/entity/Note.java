@@ -1,6 +1,5 @@
 package com.java.training.entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -8,16 +7,26 @@ public class Note {
     private String text;
     private LocalDateTime date;
 
-
-    public Note(String text, LocalDateTime date) {
+    Note(String text, LocalDateTime date) {
         this.text = text;
         this.date = date;
     }
 
-    public String getText() {return text;}
-    public LocalDateTime getDate() {return date;}
-    public void setText(String text) {this.text = text;}
-    public void setDate(LocalDateTime date) {this.date = date;}
+    public String getText() {
+        return text;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
 
     @Override

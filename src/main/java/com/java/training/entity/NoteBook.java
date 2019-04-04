@@ -2,7 +2,6 @@ package com.java.training.entity;
 
 import com.java.training.utils.RandomNoteValues;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class NoteBook {
